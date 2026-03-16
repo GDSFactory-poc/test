@@ -1,0 +1,5245 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gdsfactory.com/.pic.yml",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "pdk": {
+      "$ref": "#/definitions/pdk"
+    },
+    "default_settings": {
+      "$ref": "#/definitions/settings"
+    },
+    "instances": {
+      "$ref": "#/definitions/instances"
+    },
+    "connections": {
+      "$ref": "#/definitions/links"
+    },
+    "placements": {
+      "$ref": "#/definitions/placements"
+    },
+    "routes": {
+      "$ref": "#/definitions/routes"
+    },
+    "ports": {
+      "$ref": "#/definitions/ports"
+    },
+    "info": {
+      "$ref": "#/definitions/info"
+    }
+  },
+  "definitions": {
+    "pdk": {
+      "type": "string",
+      "description": "active pdk"
+    },
+    "settings": {
+      "type": "object",
+      "description": "settings"
+    },
+    "instances": {
+      "description": "instances",
+      "additionalProperties": {
+        "$ref": "#/definitions/instance"
+      }
+    },
+    "instance": {
+      "additionalProperties": false,
+      "properties": {
+        "component": {
+          "$ref": "#/definitions/component"
+        },
+        "settings": {
+          "$ref": "#/definitions/settings"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ANT_MMI_1x2_te1550_3dB_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "Alignment_Marker"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "EBeam_JoaquinMatres_1"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "EBeam_JoaquinMatres_2"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "EBeam_JoaquinMatres_3"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "EBeam_JoaquinMatres_4"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "EBeam_JoaquinMatres_5"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "GC_SiN_TE_1310_8degOxide_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "GC_SiN_TE_1550_8degOxide_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "GC_TE_1310_8degOxide_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "GC_TE_1550_8degOxide_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "GC_TM_1310_8degOxide_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "GC_TM_1550_8degOxide_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "Packaging_FibreArray_8ch"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "SEM_example"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "add_fiber_array"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "component": {
+                    "description": "component",
+                    "default": "ring_single",
+                    "type": "string"
+                  },
+                  "component_name": {
+                    "description": "component_name",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "fanout_length": {
+                    "description": "fanout_length",
+                    "default": 0.0,
+                    "type": "number"
+                  },
+                  "gc_port_name": {
+                    "description": "gc_port_name",
+                    "default": "o1",
+                    "type": "string"
+                  },
+                  "gc_rotation": {
+                    "description": "gc_rotation",
+                    "default": 90.0,
+                    "type": "number"
+                  },
+                  "grating_coupler": {
+                    "description": "grating_coupler",
+                    "default": "ebeam_gc_te1550",
+                    "type": "string"
+                  },
+                  "mirror_grating_coupler": {
+                    "description": "mirror_grating_coupler",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "straight": {
+                    "description": "straight",
+                    "default": "straight",
+                    "type": "string"
+                  },
+                  "taper": {
+                    "description": "taper",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "with_loopback": {
+                    "description": "with_loopback",
+                    "default": false,
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "add_fiber_array_pads_rf"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "component": {
+                    "description": "component",
+                    "default": "ring_single_heater",
+                    "type": "string"
+                  },
+                  "component_name": {
+                    "description": "component_name",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "orientation": {
+                    "description": "orientation",
+                    "default": 0.0,
+                    "type": "number"
+                  },
+                  "pad_yspacing": {
+                    "description": "pad_yspacing",
+                    "default": 50.0,
+                    "type": "number"
+                  },
+                  "username": {
+                    "description": "username",
+                    "default": "JoaquinMatres",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "add_pads"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "component": {
+                    "description": "component",
+                    "default": "ring_single_heater",
+                    "type": "string"
+                  },
+                  "label_port_name": {
+                    "description": "label_port_name",
+                    "default": "l_e1",
+                    "type": "string"
+                  },
+                  "username": {
+                    "description": "username",
+                    "default": "JoaquinMatres",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "add_pads_rf"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "component": {
+                    "description": "component",
+                    "default": "ring_single_heater",
+                    "type": "string"
+                  },
+                  "direction": {
+                    "description": "direction",
+                    "default": "top",
+                    "type": "string"
+                  },
+                  "layer": {
+                    "description": "layer",
+                    "default": "MTOP",
+                    "type": "string"
+                  },
+                  "pad_array": {
+                    "description": "pad_array",
+                    "default": "pad_array",
+                    "type": "string"
+                  },
+                  "port_names": {
+                    "description": "port_names",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "spacing": {
+                    "description": "spacing",
+                    "default": [
+                      0.0,
+                      100.0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "area_min"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "astar_bundle_electrical"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "astar_bundle_routing"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "bend_euler"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "allow_min_radius_violation": {
+                    "description": "allow_min_radius_violation",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "angle": {
+                    "description": "angle",
+                    "default": 90.0,
+                    "type": "number"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "p": {
+                    "description": "p",
+                    "default": 0.5,
+                    "type": "number"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "bend_metal"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "angle": {
+                    "description": "angle",
+                    "default": 90.0,
+                    "type": "number"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "bend_s"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "allow_min_radius_violation": {
+                    "description": "allow_min_radius_violation",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      11,
+                      1.8
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "bend_s_metal"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "allow_min_radius_violation": {
+                    "description": "allow_min_radius_violation",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  },
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      11,
+                      1.8
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "compass"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "auto_rename_ports": {
+                    "description": "auto_rename_ports",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "layer": {
+                    "description": "layer",
+                    "default": "MTOP",
+                    "type": "string"
+                  },
+                  "port_inclusion": {
+                    "description": "port_inclusion",
+                    "default": 0.0,
+                    "type": "number"
+                  },
+                  "port_orientations": {
+                    "description": "port_orientations",
+                    "default": [
+                      180,
+                      90,
+                      0,
+                      -90
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "port_type": {
+                    "description": "port_type",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      4,
+                      2
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "coupler"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.2,
+                    "type": "number"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 14.5,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "coupler_ring"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "bend": {
+                    "description": "bend",
+                    "default": "bend_euler",
+                    "type": "string"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "cross_section_bend": {
+                    "description": "cross_section_bend",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.2,
+                    "type": "number"
+                  },
+                  "length_extension": {
+                    "description": "length_extension",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "length_x": {
+                    "description": "length_x",
+                    "default": 4.0,
+                    "type": "number"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "straight": {
+                    "description": "straight",
+                    "default": "straight",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "couplers"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "crossing_SiN_1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "crossing_SiN_1550_extended"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "crossing_horizontal"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "crossing_manhattan"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "dbr"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "w1": {
+                    "description": "w1",
+                    "default": 0.5,
+                    "type": "number"
+                  },
+                  "w2": {
+                    "description": "w2",
+                    "default": 0.55,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "die"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "centered": {
+                    "description": "centered",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      440,
+                      470
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_BondPad"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_BondPad_75"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_DC_2m1_te895"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_DC_te895"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_MMI_2x2_5050_te1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_Polarizer_TM_1550_UQAM"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_YBranch_895"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_YBranch_te1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_adiabatic_te1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_adiabatic_tm1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_bdc_te1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_bdc_tm1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_crossing4"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_FAVE_SiN_1310_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_FAVE_SiN_1550_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_FAVE_Si_1310_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_FAVE_Si_1550_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_FaML_SiN_1550_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_FaML_Si_1310_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_FaML_Si_1550_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_dream_splitter_1x2_te1550_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_gc_te895"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_gc_te1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_gc_te1310_broadband"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_gc_te1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_gc_te1550_90nmSlab"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_gc_te1550_broadband"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_gc_tm1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_routing_taper_te1550_w500nm_to_w3000nm_L20um"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_routing_taper_te1550_w500nm_to_w3000nm_L40um"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_sin_dream_splitter1x2_te1550_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_splitter_adiabatic_swg_te1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_splitter_swg_assist_te1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_splitter_swg_assist_te1310_ANT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_splitter_swg_assist_te1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_splitter_swg_assist_te1550_ANT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_swg_edgecoupler"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_terminator_SiN_1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_terminator_SiN_1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_terminator_SiN_te895"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_terminator_te1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_terminator_te1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_terminator_tm1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_y_1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_y_1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_y_adiabatic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_y_adiabatic_500pin"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ebeam_y_adiabatic_1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "enclosing"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "enclosing": {
+                    "description": "enclosing",
+                    "default": 0.1,
+                    "type": "number"
+                  },
+                  "layer1": {
+                    "description": "layer1",
+                    "default": [
+                      40,
+                      0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "layer2": {
+                    "description": "layer2",
+                    "default": [
+                      41,
+                      0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "first_one"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "gap_min"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.1,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "grating_coupler_elliptical"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "grating_line_width": {
+                    "description": "grating_line_width",
+                    "default": 0.315,
+                    "type": "number"
+                  },
+                  "wavelength": {
+                    "description": "wavelength",
+                    "default": 1.55,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "heater_schem"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "import_gds"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "auto_rename_ports": {
+                    "description": "auto_rename_ports",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "cellname": {
+                    "description": "cellname",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "convert_paths_to_polygons": {
+                    "description": "convert_paths_to_polygons",
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "layer_pin": {
+                    "description": "layer_pin",
+                    "default": 36.0,
+                    "type": "number"
+                  },
+                  "layer_port": {
+                    "description": "layer_port",
+                    "default": 1.0,
+                    "type": "number"
+                  },
+                  "port_type": {
+                    "description": "port_type",
+                    "default": "optical",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "lattice"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mask"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "metal_via"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mmi1x2"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "gap_mmi": {
+                    "description": "gap_mmi",
+                    "default": 1.64,
+                    "type": "number"
+                  },
+                  "length_mmi": {
+                    "description": "length_mmi",
+                    "default": 31.0,
+                    "type": "number"
+                  },
+                  "length_taper": {
+                    "description": "length_taper",
+                    "default": 20.0,
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  },
+                  "width_mmi": {
+                    "description": "width_mmi",
+                    "default": 6.0,
+                    "type": "number"
+                  },
+                  "width_taper": {
+                    "description": "width_taper",
+                    "default": 1.5,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mmi2x2"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "gap_mmi": {
+                    "description": "gap_mmi",
+                    "default": 0.5,
+                    "type": "number"
+                  },
+                  "length_mmi": {
+                    "description": "length_mmi",
+                    "default": 42.5,
+                    "type": "number"
+                  },
+                  "length_taper": {
+                    "description": "length_taper",
+                    "default": 20.0,
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  },
+                  "width_mmi": {
+                    "description": "width_mmi",
+                    "default": 6.0,
+                    "type": "number"
+                  },
+                  "width_taper": {
+                    "description": "width_taper",
+                    "default": 1.5,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mymzi"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mzi"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "bend": {
+                    "description": "bend",
+                    "default": "bend_euler",
+                    "type": "string"
+                  },
+                  "combiner": {
+                    "description": "combiner",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "delta_length": {
+                    "description": "delta_length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "port_e0_combiner": {
+                    "description": "port_e0_combiner",
+                    "default": "o4",
+                    "type": "string"
+                  },
+                  "port_e0_splitter": {
+                    "description": "port_e0_splitter",
+                    "default": "o4",
+                    "type": "string"
+                  },
+                  "port_e1_combiner": {
+                    "description": "port_e1_combiner",
+                    "default": "o3",
+                    "type": "string"
+                  },
+                  "port_e1_splitter": {
+                    "description": "port_e1_splitter",
+                    "default": "o3",
+                    "type": "string"
+                  },
+                  "splitter": {
+                    "description": "splitter",
+                    "default": "coupler",
+                    "type": "string"
+                  },
+                  "straight": {
+                    "description": "straight",
+                    "default": "straight",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mzi2"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mzi_1x1"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "bend": {
+                    "description": "bend",
+                    "default": "bend_euler",
+                    "type": "string"
+                  },
+                  "combiner": {
+                    "description": "combiner",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "delta_length": {
+                    "description": "delta_length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "port_e0_combiner": {
+                    "description": "port_e0_combiner",
+                    "default": "o3",
+                    "type": "string"
+                  },
+                  "port_e0_splitter": {
+                    "description": "port_e0_splitter",
+                    "default": "o3",
+                    "type": "string"
+                  },
+                  "port_e1_combiner": {
+                    "description": "port_e1_combiner",
+                    "default": "o2",
+                    "type": "string"
+                  },
+                  "port_e1_splitter": {
+                    "description": "port_e1_splitter",
+                    "default": "o2",
+                    "type": "string"
+                  },
+                  "splitter": {
+                    "description": "splitter",
+                    "default": "ebeam_y_1550",
+                    "type": "string"
+                  },
+                  "straight": {
+                    "description": "straight",
+                    "default": "straight",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mzi_heater"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "delta_length": {
+                    "description": "delta_length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "length_x": {
+                    "description": "length_x",
+                    "default": 200.0,
+                    "type": "number"
+                  },
+                  "splitter": {
+                    "description": "splitter",
+                    "default": "ebeam_y_1550",
+                    "type": "string"
+                  },
+                  "straight_x_top": {
+                    "description": "straight_x_top",
+                    "default": "straight_heater_metal",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mzi_heater_2x2"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "combiner": {
+                    "description": "combiner",
+                    "default": "mmi2x2",
+                    "type": "string"
+                  },
+                  "delta_length": {
+                    "description": "delta_length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "length_x": {
+                    "description": "length_x",
+                    "default": 200.0,
+                    "type": "number"
+                  },
+                  "splitter": {
+                    "description": "splitter",
+                    "default": "mmi2x2",
+                    "type": "string"
+                  },
+                  "straight_x_top": {
+                    "description": "straight_x_top",
+                    "default": "straight_heater_metal",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mzi_heater_schematic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "mzi_heater_with_pads"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "nxn"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "east": {
+                    "description": "east",
+                    "default": 4,
+                    "type": "number"
+                  },
+                  "layer": {
+                    "description": "layer",
+                    "default": "WG",
+                    "type": "string"
+                  },
+                  "north": {
+                    "description": "north",
+                    "default": 0,
+                    "type": "number"
+                  },
+                  "south": {
+                    "description": "south",
+                    "default": 0,
+                    "type": "number"
+                  },
+                  "west": {
+                    "description": "west",
+                    "default": 1,
+                    "type": "number"
+                  },
+                  "wg_margin": {
+                    "description": "wg_margin",
+                    "default": 1.0,
+                    "type": "number"
+                  },
+                  "wg_width": {
+                    "description": "wg_width",
+                    "default": 0.45,
+                    "type": "number"
+                  },
+                  "xsize": {
+                    "description": "xsize",
+                    "default": 8.0,
+                    "type": "number"
+                  },
+                  "ysize": {
+                    "description": "ysize",
+                    "default": 8.0,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pack_doe"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "do_permutations": {
+                    "description": "do_permutations",
+                    "default": 0.0,
+                    "type": "number"
+                  },
+                  "doe": {
+                    "description": "doe",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "function": {
+                    "description": "function",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "settings": {
+                    "description": "settings",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pack_doe_grid"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "do_permutations": {
+                    "description": "do_permutations",
+                    "default": 0.0,
+                    "type": "number"
+                  },
+                  "doe": {
+                    "description": "doe",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "function": {
+                    "description": "function",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "settings": {
+                    "description": "settings",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "with_text": {
+                    "description": "with_text",
+                    "default": 0.0,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pad"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "layer": {
+                    "description": "layer",
+                    "default": "MTOP",
+                    "type": "string"
+                  },
+                  "port_inclusion": {
+                    "description": "port_inclusion",
+                    "default": 0.0,
+                    "type": "number"
+                  },
+                  "port_orientation": {
+                    "description": "port_orientation",
+                    "default": 0.0,
+                    "type": "number"
+                  },
+                  "port_orientations": {
+                    "description": "port_orientations",
+                    "default": [
+                      180,
+                      90,
+                      0,
+                      -90
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      90.0,
+                      90.0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pad_array"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "auto_rename_ports": {
+                    "description": "auto_rename_ports",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "centered_ports": {
+                    "description": "centered_ports",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "column_pitch": {
+                    "description": "column_pitch",
+                    "default": 125.0,
+                    "type": "number"
+                  },
+                  "columns": {
+                    "description": "columns",
+                    "default": 6,
+                    "type": "number"
+                  },
+                  "layer": {
+                    "description": "layer",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "pad": {
+                    "description": "pad",
+                    "default": "pad",
+                    "type": "string"
+                  },
+                  "port_orientation": {
+                    "description": "port_orientation",
+                    "default": 270.0,
+                    "type": "number"
+                  },
+                  "row_pitch": {
+                    "description": "row_pitch",
+                    "default": 125.0,
+                    "type": "number"
+                  },
+                  "rows": {
+                    "description": "rows",
+                    "default": 1,
+                    "type": "number"
+                  },
+                  "size": {
+                    "description": "size",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pads"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pads_correct"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pads_shorted"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "pbs_1550_eskid"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "photonic_wirebond_surfacetaper_1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "photonic_wirebond_surfacetaper_1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ports8"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ports8_wrapper"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "rectangle"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "centered": {
+                    "description": "centered",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "layer": {
+                    "description": "layer",
+                    "default": "MTOP",
+                    "type": "string"
+                  },
+                  "port_orientations": {
+                    "description": "port_orientations",
+                    "default": [
+                      180,
+                      90,
+                      0,
+                      -90
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "port_type": {
+                    "description": "port_type",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      4,
+                      2
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ring_double"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.2,
+                    "type": "number"
+                  },
+                  "gap_bot": {
+                    "description": "gap_bot",
+                    "type": "number"
+                  },
+                  "gap_top": {
+                    "description": "gap_top",
+                    "type": "number"
+                  },
+                  "length_extension": {
+                    "description": "length_extension",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "length_x": {
+                    "description": "length_x",
+                    "default": 0.01,
+                    "type": "number"
+                  },
+                  "length_y": {
+                    "description": "length_y",
+                    "default": 0.01,
+                    "type": "number"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "default": 10.0,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ring_double_heater"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "bend": {
+                    "description": "bend",
+                    "default": "bend_euler",
+                    "type": "string"
+                  },
+                  "coupler_ring": {
+                    "description": "coupler_ring",
+                    "default": "coupler_ring",
+                    "type": "string"
+                  },
+                  "coupler_ring_top": {
+                    "description": "coupler_ring_top",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "cross_section_heater": {
+                    "description": "cross_section_heater",
+                    "default": "heater_metal",
+                    "type": "string"
+                  },
+                  "cross_section_waveguide_heater": {
+                    "description": "cross_section_waveguide_heater",
+                    "default": "strip_heater_metal",
+                    "type": "string"
+                  },
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.2,
+                    "type": "number"
+                  },
+                  "gap_bot": {
+                    "description": "gap_bot",
+                    "type": "number"
+                  },
+                  "gap_top": {
+                    "description": "gap_top",
+                    "type": "number"
+                  },
+                  "length_extension": {
+                    "description": "length_extension",
+                    "type": "number"
+                  },
+                  "length_x": {
+                    "description": "length_x",
+                    "default": 2.0,
+                    "type": "number"
+                  },
+                  "length_y": {
+                    "description": "length_y",
+                    "default": 0.01,
+                    "type": "number"
+                  },
+                  "port_orientation": {
+                    "description": "port_orientation",
+                    "type": "number"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "straight": {
+                    "description": "straight",
+                    "default": "straight",
+                    "type": "string"
+                  },
+                  "via_stack": {
+                    "description": "via_stack",
+                    "default": "via_stack_heater_mtop",
+                    "type": "string"
+                  },
+                  "via_stack_offset": {
+                    "description": "via_stack_offset",
+                    "default": [
+                      1,
+                      0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "via_stack_size": {
+                    "description": "via_stack_size",
+                    "default": [
+                      4,
+                      4
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ring_filter_with_gratings"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ring_single"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.2,
+                    "type": "number"
+                  },
+                  "length_extension": {
+                    "description": "length_extension",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "length_x": {
+                    "description": "length_x",
+                    "default": 4.0,
+                    "type": "number"
+                  },
+                  "length_y": {
+                    "description": "length_y",
+                    "default": 0.6,
+                    "type": "number"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "default": 10.0,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "ring_single_heater"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "bend": {
+                    "description": "bend",
+                    "default": "bend_euler",
+                    "type": "string"
+                  },
+                  "coupler_ring": {
+                    "description": "coupler_ring",
+                    "default": "coupler_ring",
+                    "type": "string"
+                  },
+                  "coupler_ring_top": {
+                    "description": "coupler_ring_top",
+                    "default": "None",
+                    "type": "string"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "cross_section_heater": {
+                    "description": "cross_section_heater",
+                    "default": "heater_metal",
+                    "type": "string"
+                  },
+                  "cross_section_waveguide_heater": {
+                    "description": "cross_section_waveguide_heater",
+                    "default": "strip_heater_metal",
+                    "type": "string"
+                  },
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.2,
+                    "type": "number"
+                  },
+                  "length_extension": {
+                    "description": "length_extension",
+                    "type": "number"
+                  },
+                  "length_x": {
+                    "description": "length_x",
+                    "default": 2.0,
+                    "type": "number"
+                  },
+                  "length_y": {
+                    "description": "length_y",
+                    "default": 0.01,
+                    "type": "number"
+                  },
+                  "port_orientation": {
+                    "description": "port_orientation",
+                    "type": "number"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "straight": {
+                    "description": "straight",
+                    "default": "straight",
+                    "type": "string"
+                  },
+                  "via_stack": {
+                    "description": "via_stack",
+                    "default": "via_stack_heater_mtop",
+                    "type": "string"
+                  },
+                  "via_stack_offset": {
+                    "description": "via_stack_offset",
+                    "default": [
+                      1,
+                      0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "via_stack_size": {
+                    "description": "via_stack_size",
+                    "default": [
+                      4,
+                      4
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "rings_filter"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample0_hello_world"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample1_connect"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample2_remove_layers"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample3_grid"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample4_pack"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample5_path"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample6_cross_section"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_array"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_crossing_from_gds"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_drc_errors"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_fill"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_lvs_error"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_route_bundle"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_route_bundle_with_steps"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "sample_virtual_instance"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "separation"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "gap": {
+                    "description": "gap",
+                    "default": 0.1,
+                    "type": "number"
+                  },
+                  "layer1": {
+                    "description": "layer1",
+                    "default": [
+                      47,
+                      0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "layer2": {
+                    "description": "layer2",
+                    "default": [
+                      41,
+                      0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "siepic_o_gc_te1270_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "siepic_o_pwbstlas_si_BB"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "spiral"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 100.0,
+                    "type": "number"
+                  },
+                  "n_loops": {
+                    "description": "n_loops",
+                    "default": 6,
+                    "type": "number"
+                  },
+                  "spacing": {
+                    "description": "spacing",
+                    "default": 3.0,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "spiral_racetrack"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "allow_min_radius_violation": {
+                    "description": "allow_min_radius_violation",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "bend": {
+                    "description": "bend",
+                    "default": "bend_euler",
+                    "type": "string"
+                  },
+                  "bend_s": {
+                    "description": "bend_s",
+                    "default": "bend_s",
+                    "type": "string"
+                  },
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "cross_section_s": {
+                    "description": "cross_section_s",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "extra_90_deg_bend": {
+                    "description": "extra_90_deg_bend",
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "min_radius": {
+                    "description": "min_radius",
+                    "type": "number"
+                  },
+                  "spacings": {
+                    "description": "spacings",
+                    "default": [
+                      2,
+                      2,
+                      3,
+                      3,
+                      2,
+                      2
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "straight": {
+                    "description": "straight",
+                    "default": "straight",
+                    "type": "string"
+                  },
+                  "straight_length": {
+                    "description": "straight_length",
+                    "default": 20.0,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "spiral_racetrack_heater"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "num": {
+                    "description": "num",
+                    "default": 8,
+                    "type": "number"
+                  },
+                  "spacing": {
+                    "description": "spacing",
+                    "default": 4.0,
+                    "type": "number"
+                  },
+                  "straight_length": {
+                    "description": "straight_length",
+                    "default": 100.0,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "splitter_tree"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "noutputs": {
+                    "description": "noutputs",
+                    "default": 8.0,
+                    "type": "number"
+                  },
+                  "spacing": {
+                    "description": "spacing",
+                    "default": [
+                      120,
+                      50
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "straight"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "npoints": {
+                    "description": "npoints",
+                    "default": 2,
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "straight_heater_meander"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "heater_width": {
+                    "description": "heater_width",
+                    "default": 2.5,
+                    "type": "number"
+                  },
+                  "layer_heater": {
+                    "description": "layer_heater",
+                    "default": "M1_HEATER",
+                    "type": "string"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 320.0,
+                    "type": "number"
+                  },
+                  "n": {
+                    "description": "n",
+                    "default": 3,
+                    "type": "number"
+                  },
+                  "port_orientation1": {
+                    "description": "port_orientation1",
+                    "type": "number"
+                  },
+                  "port_orientation2": {
+                    "description": "port_orientation2",
+                    "type": "number"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "type": "number"
+                  },
+                  "spacing": {
+                    "description": "spacing",
+                    "default": 2.0,
+                    "type": "number"
+                  },
+                  "via_stack": {
+                    "description": "via_stack",
+                    "default": "via_stack_heater_mtop",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "straight_heater_metal"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 320.0,
+                    "type": "number"
+                  },
+                  "length_straight": {
+                    "description": "length_straight",
+                    "default": 0.1,
+                    "type": "number"
+                  },
+                  "length_straight_input": {
+                    "description": "length_straight_input",
+                    "default": 15.0,
+                    "type": "number"
+                  },
+                  "length_undercut": {
+                    "description": "length_undercut",
+                    "default": 30.0,
+                    "type": "number"
+                  },
+                  "length_undercut_spacing": {
+                    "description": "length_undercut_spacing",
+                    "default": 6.0,
+                    "type": "number"
+                  },
+                  "port_orientation1": {
+                    "description": "port_orientation1",
+                    "type": "number"
+                  },
+                  "port_orientation2": {
+                    "description": "port_orientation2",
+                    "type": "number"
+                  },
+                  "with_undercut": {
+                    "description": "with_undercut",
+                    "default": false,
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "straight_metal"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "taper"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "strip",
+                    "type": "string"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "width1": {
+                    "description": "width1",
+                    "default": 0.5,
+                    "type": "number"
+                  },
+                  "width2": {
+                    "description": "width2",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "taper_SiN_750_3000"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "taper_metal"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  },
+                  "length": {
+                    "description": "length",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "width1": {
+                    "description": "width1",
+                    "default": 1.5,
+                    "type": "number"
+                  },
+                  "width2": {
+                    "description": "width2",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "taper_si_simm_1310"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "taper_si_simm_1550"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "text_rectangular"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "justify": {
+                    "description": "justify",
+                    "default": "left",
+                    "type": "string"
+                  },
+                  "layer": {
+                    "description": "layer",
+                    "default": "M2_ROUTER",
+                    "type": "string"
+                  },
+                  "size": {
+                    "description": "size",
+                    "default": 3.0,
+                    "type": "number"
+                  },
+                  "text": {
+                    "description": "text",
+                    "default": "abc",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "text_rectangular_multi_layer"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "layers": {
+                    "description": "layers",
+                    "default": [
+                      "WG",
+                      "M2_ROUTER"
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "description": "text",
+                    "default": "abc",
+                    "type": "string"
+                  },
+                  "text_factory": {
+                    "description": "text_factory",
+                    "default": "text_rectangular",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "thermal_phase_shifter_multimode_"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "thermal_phase_shifter_te_1310_"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "thermal_phase_shifter_te_1310_50"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "thermal_phase_shifter_te_1550_50"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "tooclose"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "via_stack_heater_mtop"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      20.0,
+                      10.0
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "width_min"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "size": {
+                    "description": "size",
+                    "default": [
+                      0.1,
+                      0.1
+                    ],
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "wire_corner"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "wire_corner45"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  },
+                  "layer": {
+                    "description": "layer",
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "default": 10.0,
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "type": "number"
+                  },
+                  "with_corner90_ports": {
+                    "description": "with_corner90_ports",
+                    "default": true,
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "component": {
+                "const": "wire_corner45_straight"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "settings": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cross_section": {
+                    "description": "cross_section",
+                    "default": "metal_routing",
+                    "type": "string"
+                  },
+                  "radius": {
+                    "description": "radius",
+                    "default": 1.5,
+                    "type": "number"
+                  },
+                  "width": {
+                    "description": "width",
+                    "default": 1.5,
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "placements": {
+      "type": "object",
+      "description": "placements",
+      "additionalProperties": {
+        "$ref": "#/definitions/placement"
+      }
+    },
+    "routes": {
+      "type": "object",
+      "description": "routes",
+      "additionalProperties": {
+        "$ref": "#/definitions/route"
+      }
+    },
+    "route": {
+      "additionalProperties": false,
+      "properties": {
+        "routing_strategy": {
+          "$ref": "#/definitions/routing_strategy"
+        },
+        "settings": {
+          "$ref": "#/definitions/route_settings"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "instance1,o1": {
+          "$ref": "#/definitions/instanceport"
+        },
+        "instance1,o2": {
+          "$ref": "#/definitions/instanceport"
+        },
+        "instance2,o1": {
+          "$ref": "#/definitions/instanceport"
+        },
+        "instance2,o2": {
+          "$ref": "#/definitions/instanceport"
+        }
+      },
+      "patternProperties": {
+        "^[a-zA-Z_]\\w*,[a-zA-Z_]\\w*(:[0-9]+)*$": {
+          "$ref": "#/definitions/instanceport"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cross_section": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "cross_section",
+            "heater_metal",
+            "metal_routing",
+            "strip",
+            "strip_bbox",
+            "strip_heater_metal",
+            "strip_simple",
+            "strip_unclad"
+          ]
+        }
+      ],
+      "description": "cross section"
+    },
+    "ports": {
+      "type": "object",
+      "description": "ports",
+      "patternProperties": {
+        "^[a-zA-Z_]\\w*$": {
+          "$ref": "#/definitions/instanceport"
+        }
+      },
+      "additionalProperties": false
+    },
+    "route_settings": {
+      "type": "object",
+      "description": "route settings",
+      "properties": {
+        "cross_section": {
+          "$ref": "#/definitions/cross_section"
+        },
+        "separation": {
+          "type": "number",
+          "description": "waveguide separation within bundle"
+        },
+        "turns": {
+          "type": "array",
+          "description": "where to take turns in the route"
+        }
+      }
+    },
+    "routing_strategy": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "auto",
+            "custom"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "placement": {
+      "type": "object",
+      "description": "placement",
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "description": "x-placement",
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/instanceport"
+            }
+          ]
+        },
+        "xmin": {
+          "description": "x-placement",
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/instanceport"
+            }
+          ]
+        },
+        "xmax": {
+          "description": "x-placement",
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/instanceport"
+            }
+          ]
+        },
+        "y": {
+          "description": "y-placement",
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/instanceport"
+            }
+          ]
+        },
+        "ymin": {
+          "description": "y-placement",
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/instanceport"
+            }
+          ]
+        },
+        "ymax": {
+          "description": "y-placement",
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/definitions/instanceport"
+            }
+          ]
+        },
+        "port": {
+          "type": "string",
+          "description": "which port or location of the component to place",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/instanceport"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "enum": [
+                "ne",
+                "nc",
+                "nw",
+                "se",
+                "sc",
+                "sw",
+                "ce",
+                "cw",
+                "cc",
+                "center"
+              ]
+            }
+          ]
+        },
+        "rotation": {
+          "type": "number",
+          "description": "rotation"
+        },
+        "dx": {
+          "type": "number",
+          "description": "x-offset"
+        },
+        "dy": {
+          "type": "number",
+          "description": "y-offset"
+        },
+        "mirror": {
+          "oneOf": [
+            {
+              "type": "boolean",
+              "description": "horizontal flip"
+            },
+            {
+              "type": "number",
+              "description": "numeric value for mirror setting"
+            }
+          ],
+          "description": "horizontal flip can be a boolean or a number"
+        }
+      }
+    },
+    "component": {
+      "description": "component",
+      "anyOf": [
+        {
+          "enum": [
+            "ANT_MMI_1x2_te1550_3dB_BB",
+            "Alignment_Marker",
+            "EBeam_JoaquinMatres_1",
+            "EBeam_JoaquinMatres_2",
+            "EBeam_JoaquinMatres_3",
+            "EBeam_JoaquinMatres_4",
+            "EBeam_JoaquinMatres_5",
+            "GC_SiN_TE_1310_8degOxide_BB",
+            "GC_SiN_TE_1550_8degOxide_BB",
+            "GC_TE_1310_8degOxide_BB",
+            "GC_TE_1550_8degOxide_BB",
+            "GC_TM_1310_8degOxide_BB",
+            "GC_TM_1550_8degOxide_BB",
+            "Packaging_FibreArray_8ch",
+            "SEM_example",
+            "add_fiber_array",
+            "add_fiber_array_pads_rf",
+            "add_pads",
+            "add_pads_rf",
+            "area_min",
+            "astar_bundle_electrical",
+            "astar_bundle_routing",
+            "bend_euler",
+            "bend_metal",
+            "bend_s",
+            "bend_s_metal",
+            "compass",
+            "coupler",
+            "coupler_ring",
+            "couplers",
+            "crossing_SiN_1550",
+            "crossing_SiN_1550_extended",
+            "crossing_horizontal",
+            "crossing_manhattan",
+            "dbr",
+            "die",
+            "ebeam_BondPad",
+            "ebeam_BondPad_75",
+            "ebeam_DC_2m1_te895",
+            "ebeam_DC_te895",
+            "ebeam_MMI_2x2_5050_te1310",
+            "ebeam_Polarizer_TM_1550_UQAM",
+            "ebeam_YBranch_895",
+            "ebeam_YBranch_te1310",
+            "ebeam_adiabatic_te1550",
+            "ebeam_adiabatic_tm1550",
+            "ebeam_bdc_te1550",
+            "ebeam_bdc_tm1550",
+            "ebeam_crossing4",
+            "ebeam_dream_FAVE_SiN_1310_BB",
+            "ebeam_dream_FAVE_SiN_1550_BB",
+            "ebeam_dream_FAVE_Si_1310_BB",
+            "ebeam_dream_FAVE_Si_1550_BB",
+            "ebeam_dream_FaML_SiN_1550_BB",
+            "ebeam_dream_FaML_Si_1310_BB",
+            "ebeam_dream_FaML_Si_1550_BB",
+            "ebeam_dream_splitter_1x2_te1550_BB",
+            "ebeam_gc_te895",
+            "ebeam_gc_te1310",
+            "ebeam_gc_te1310_broadband",
+            "ebeam_gc_te1550",
+            "ebeam_gc_te1550_90nmSlab",
+            "ebeam_gc_te1550_broadband",
+            "ebeam_gc_tm1550",
+            "ebeam_routing_taper_te1550_w500nm_to_w3000nm_L20um",
+            "ebeam_routing_taper_te1550_w500nm_to_w3000nm_L40um",
+            "ebeam_sin_dream_splitter1x2_te1550_BB",
+            "ebeam_splitter_adiabatic_swg_te1550",
+            "ebeam_splitter_swg_assist_te1310",
+            "ebeam_splitter_swg_assist_te1310_ANT",
+            "ebeam_splitter_swg_assist_te1550",
+            "ebeam_splitter_swg_assist_te1550_ANT",
+            "ebeam_swg_edgecoupler",
+            "ebeam_terminator_SiN_1310",
+            "ebeam_terminator_SiN_1550",
+            "ebeam_terminator_SiN_te895",
+            "ebeam_terminator_te1310",
+            "ebeam_terminator_te1550",
+            "ebeam_terminator_tm1550",
+            "ebeam_y_1310",
+            "ebeam_y_1550",
+            "ebeam_y_adiabatic",
+            "ebeam_y_adiabatic_500pin",
+            "ebeam_y_adiabatic_1310",
+            "enclosing",
+            "first_one",
+            "gap_min",
+            "grating_coupler_elliptical",
+            "heater_schem",
+            "import_gds",
+            "lattice",
+            "mask",
+            "metal_via",
+            "mmi1x2",
+            "mmi2x2",
+            "mymzi",
+            "mzi",
+            "mzi2",
+            "mzi_1x1",
+            "mzi_heater",
+            "mzi_heater_2x2",
+            "mzi_heater_schematic",
+            "mzi_heater_with_pads",
+            "nxn",
+            "pack_doe",
+            "pack_doe_grid",
+            "pad",
+            "pad_array",
+            "pads",
+            "pads_correct",
+            "pads_shorted",
+            "pbs_1550_eskid",
+            "photonic_wirebond_surfacetaper_1310",
+            "photonic_wirebond_surfacetaper_1550",
+            "ports8",
+            "ports8_wrapper",
+            "rectangle",
+            "ring_double",
+            "ring_double_heater",
+            "ring_filter_with_gratings",
+            "ring_single",
+            "ring_single_heater",
+            "rings_filter",
+            "sample0_hello_world",
+            "sample1_connect",
+            "sample2_remove_layers",
+            "sample3_grid",
+            "sample4_pack",
+            "sample5_path",
+            "sample6_cross_section",
+            "sample_array",
+            "sample_crossing_from_gds",
+            "sample_drc_errors",
+            "sample_fill",
+            "sample_lvs_error",
+            "sample_route_bundle",
+            "sample_route_bundle_with_steps",
+            "sample_virtual_instance",
+            "separation",
+            "siepic_o_gc_te1270_BB",
+            "siepic_o_pwbstlas_si_BB",
+            "spiral",
+            "spiral_racetrack",
+            "spiral_racetrack_heater",
+            "splitter_tree",
+            "straight",
+            "straight_heater_meander",
+            "straight_heater_metal",
+            "straight_metal",
+            "taper",
+            "taper_SiN_750_3000",
+            "taper_metal",
+            "taper_si_simm_1310",
+            "taper_si_simm_1550",
+            "text_rectangular",
+            "text_rectangular_multi_layer",
+            "thermal_phase_shifter_multimode_",
+            "thermal_phase_shifter_te_1310_",
+            "thermal_phase_shifter_te_1310_50",
+            "thermal_phase_shifter_te_1550_50",
+            "tooclose",
+            "via_stack_heater_mtop",
+            "width_min",
+            "wire_corner",
+            "wire_corner45",
+            "wire_corner45_straight"
+          ]
+        }
+      ]
+    },
+    "instanceport": {
+      "description": "link value",
+      "anyOf": [
+        {
+          "enum": [
+            "instance1,o1",
+            "instance1,o2",
+            "instance2,o1",
+            "instance2,o2"
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^[a-zA-Z_]\\w*,[a-zA-Z_]\\w*(:[0-9]+)*$"
+        }
+      ]
+    },
+    "info": {
+      "type": "object",
+      "description": "extra info"
+    }
+  }
+}

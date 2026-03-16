@@ -1,0 +1,11 @@
+gdsfactoryplus
+gplugins[femwell,sax,tidy3d]==2.0.1
+meow-sim
+pytz
+scikit-learn
+ubcpdk==3.3.3
+
+[dev]
+pre-commit
+ruff
+uv
