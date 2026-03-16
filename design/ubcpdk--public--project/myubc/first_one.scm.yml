@@ -1,0 +1,61 @@
+exploded: ''
+camera_transform:
+  translation:
+    x: -216.0
+    y: 18.0
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  scale:
+    x: 1.0
+    y: 1.0
+    z: 1.0
+transforms:
+  instance1:
+    translation:
+      x: -381.5
+      y: 114.5
+      z: 1.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+  instance2:
+    translation:
+      x: -162.5
+      y: 114.5
+      z: 1.0
+    rotation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    scale:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+sizes:
+  instance1:
+    width: 100
+    height: 100
+  instance2:
+    width: 100
+    height: 100
+link_paths: []
+layers:
+  instance1: 0
+  instance2: 0
+fan_point_positions:
+  bundle1:
+  - x: -276.75
+    y: 95.16666
+  - x: -167.25
+    y: 133.83333
